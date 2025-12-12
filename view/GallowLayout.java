@@ -2,6 +2,7 @@ package view;
 
 public class GallowLayout {
     public static void showLayout(String wordTarget, String typedLetters, String correctLettersTyped, int lives) {
+        showLives(lives);
         showGallow(lives);
         showTyppedAndUntyppedLetters(typedLetters);
         showWordToCompleteProgress(wordTarget, correctLettersTyped);
@@ -40,6 +41,17 @@ public class GallowLayout {
             }
         }
         System.out.println();
+    }
+
+    public static void showLives(int lives) {
+        String RED = "\u001B[31m";
+        String RESET = "\u001B[0m";
+        if (lives < 3) {
+            System.out.println(RED + "Vidas restantes: " + lives + RESET);
+        } else {
+            System.out.println("Vidas restantes: " + lives);
+        }
+
     }
 
     public static void letterNotExistsMessage(char letter) {
