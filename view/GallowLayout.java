@@ -1,6 +1,10 @@
 package view;
 
 public class GallowLayout {
+    static String RESET = "\u001B[0m";
+    static String RED = "\u001B[31m";
+    static String GREEN = "\u001B[32m";
+    static String UNDERLINE = "\u001B[4m";
     public static void showLayout(String wordTarget, String typedLetters, String correctLettersTyped, int lives) {
         showLives(lives);
         showGallow(lives);
@@ -9,9 +13,6 @@ public class GallowLayout {
     }
 
     public static void showTyppedAndUntyppedLetters(String typedLetters) {
-        String RESET = "\u001B[0m";
-        String RED = "\u001B[31m";
-        String GREEN = "\u001B[32m";
         String typedLetterLower = typedLetters.toLowerCase();
 
         System.out.print("Letras: ");
@@ -28,8 +29,6 @@ public class GallowLayout {
     }
 
     public static void showWordToCompleteProgress(String wordTarget, String correctLettersTyped) {
-        String UNDERLINE = "\u001B[4m";
-        String RESET = "\u001B[0m";
         String wordTargetLower = wordTarget.toLowerCase();
 
         System.out.print("Palavra a completar: ");
@@ -44,8 +43,6 @@ public class GallowLayout {
     }
 
     public static void showLives(int lives) {
-        String RED = "\u001B[31m";
-        String RESET = "\u001B[0m";
         if (lives < 3) {
             System.out.println(RED + "Vidas restantes: " + lives + RESET);
         } else {
@@ -55,8 +52,6 @@ public class GallowLayout {
     }
 
     public static void letterNotExistsMessage(char letter) {
-        String RESET = "\u001B[0m";
-        String RED = "\u001B[31m";
         System.out.println("Letra \'" + letter + "\' não existe nessa palavra");
         System.out.println(RED + "-1 vida" + RESET);
     }
@@ -71,8 +66,6 @@ public class GallowLayout {
     }
 
     public static void winMessage(int lives, String targetWord) {
-        String GREEN = "\u001B[32m";
-        String RESET = "\u001B[0m";
         System.out.println(GREEN + "PARABENS!" + RESET + " Você acertou a palavra " + targetWord + " com " + lives + " vidas restantes!");
     }
 
