@@ -42,6 +42,28 @@ public class GallowLayout {
         System.out.println();
     }
 
+    public static void letterNotExistsMessage(char letter) {
+        String RESET = "\u001B[0m";
+        String RED = "\u001B[31m";
+        System.out.println("Letra \'" + letter + "\' não existe nessa palavra");
+        System.out.println(RED + "-1 vida" + RESET);
+    }
+
+    public static void letterAlreadyRecordedMessage(char letter) {
+        System.out.println("Letra \'" + letter + "\' já registrada!");
+    }
+
+    public static void defeatMessage(String targetWord) {
+        System.out.println("Suas vidas chegaram a 0, você perdeu!");
+        System.out.println("A palavra era: " + targetWord);
+    }
+
+    public static void winMessage(int lives, String targetWord) {
+        String GREEN = "\u001B[32m";
+        String RESET = "\u001B[0m";
+        System.out.println(GREEN + "PARABENS!" + RESET + " Você acertou a palavra " + targetWord + " com " + lives + " vidas restantes!");
+    }
+
     public static void showGallow(int lives) {
 
         switch (lives) {
